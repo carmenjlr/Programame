@@ -4,42 +4,79 @@ import java.util.Scanner;
 
 public class BecariosPrecarios423 {
 
+//    OPCION RECURSIVIDAD
+//    private static Scanner sc = new Scanner(System.in);
+//    private static int knumJefes = 0;
+//    private static int contadorPrecarios = 0;
+
+
     public static void main(String[] args) {
+
+//        OPCION RECURSIVIDAD
+//        while (sc.hasNext()) {
+//
+//            knumJefes = sc.nextInt();
+//            contadorPrecarios = 0;
+//
+//            leerJerarquia(0);
+//
+//            System.out.println(contadorPrecarios);
+//
+//        }
 
         Scanner sc = new Scanner(System.in);
 
-        int numjefes = sc.nextInt();
-        String jerarquia = sc.next();
+        while (sc.hasNext()) {
 
-        int contador = 0;
-        int contadorPosicion = 0;
-        int contadorCeros = 0;
+            int knumJefes = sc.nextInt();
+            int contadorPrecarios = 0;
 
-        for (int i = 0; i < jerarquia.length(); i++) {
-            int num = Integer.parseInt(String.valueOf(jerarquia.charAt(i)));
+            int[] hijosPendientes = new int[10000];  //subordinados de cada jefe por procesar
+            int nivelActual = 0;
 
-            if (num != 0){
-                contador++;
-            }
+            hijosPendientes[0] = 1; // el jefe supremo
 
-            if (contador >= numjefes){
-                for (int i1= jerarquia.length(); i1 > 0; i1 --){
-                    int total = jerarquia.charAt(i1);
+            while (nivelActual >= 0) {
 
-                    if (total != 0){
-                        contadorPosicion ++;
+                int num = sc.nextInt();
+
+                hijosPendientes[nivelActual]--;
+
+                if (num == 0) { // es un becario
+                    if (nivelActual >= knumJefes) {
+                        contadorPrecarios++;
                     }
+                } else {
+                    nivelActual++;
+                    hijosPendientes[nivelActual] = num;
+                    continue;
+                }
 
-                    while (contadorPosicion < numjefes){
-                        contadorCeros++;
-                        contadorPosicion++;
-                    }
-
+                while (nivelActual >= 0 && hijosPendientes[nivelActual] == 0) {
+                    nivelActual--;
                 }
             }
+
+            System.out.println(contadorPrecarios);
         }
-        System.out.println(contadorCeros);
 
     }
-
 }
+
+
+//    OPCION RECURSIVIDAD
+//    public static void leerJerarquia(int nivelActual) {
+//        int num = sc.nextInt(); //numero de subordinados
+//
+//        if (num == 0) { //es becario
+//            if (nivelActual >= knumJefes) {
+//                contadorPrecarios++;
+//            }
+//            return;
+//        }
+//
+//        for (int i = 0; i < num; i++) {
+//            leerJerarquia(nivelActual + 1);
+//        }
+//
+//    }
