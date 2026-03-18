@@ -2,7 +2,7 @@ package org.example.dia1_9_3_26.sesion;
 
 import java.util.Scanner;
 
-public class Parchis407 {
+public class Parchis407WA {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int numCasillasTablero, posInicial, movimiento;
