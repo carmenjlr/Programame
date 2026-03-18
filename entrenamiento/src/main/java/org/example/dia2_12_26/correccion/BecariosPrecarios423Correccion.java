@@ -2,7 +2,7 @@ package org.example.dia2_12_26.correccion;
 
 import java.util.Scanner;
 
-public class BecariosPrecarios423 {
+public class BecariosPrecarios423Correccion {
 
 //    OPCION RECURSIVIDAD
 //    private static Scanner sc = new Scanner(System.in);

@@ -2,7 +2,7 @@ package org.example.dia2_12_26.correccion;
 
 import java.util.Scanner;
 
-public class SecretoBolsa420 {
+public class SecretoBolsa420Correccion {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
