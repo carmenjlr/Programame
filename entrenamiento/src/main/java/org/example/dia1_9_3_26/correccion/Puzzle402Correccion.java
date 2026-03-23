@@ -1,3 +1,5 @@
+package org.example.dia1_9_3_26.correccion;
+
 import java.util.Scanner;
 public class Puzzle402Correccion {
     public static void main(String[] args) {

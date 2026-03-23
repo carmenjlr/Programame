@@ -1,3 +1,5 @@
+package org.example.dia2_12_26.correccion;
+
 import java.util.Scanner;
 
 public class CuadradoPerfecto414Correccion {

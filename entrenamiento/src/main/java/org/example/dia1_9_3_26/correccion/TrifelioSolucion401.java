@@ -1,3 +1,4 @@
+package org.example.dia1_9_3_26.correccion;
 import java.util.Scanner;
 
 public class TrifelioSolucion401 {
@@ -20,6 +21,7 @@ public class TrifelioSolucion401 {
             } else {
                 System.out.println("NO");
             }
+            
         }
     }
 }
