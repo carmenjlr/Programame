@@ -17,14 +17,14 @@ public class YongeStreet406 {
             char[] resultado = new char[calle.length()];
             Arrays.fill(resultado, '.');
 
-            List<Character> coches = new ArrayList<>();
+            List<Character> coches = new ArrayList<>(); //guardo los coches antes del semaforo
 
             for (int i = 0; i < calle.length(); i++) {
                 char c = calle.charAt(i);
 
                 if (c == '|') {
                     resultado[i] = '|';
-                    int pos = i - 1;
+                    int pos = i - 1; //para colocar los coches antes del semaforo
 
                     for (int j = coches.size() - 1; j >= 0; j--) {
                         resultado[pos] = coches.get(j);
